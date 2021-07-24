@@ -1,5 +1,5 @@
 name: portfolio
-description: A new Flutter project.
+description: A portfolio website written in Flutter.
 
 publish_to: 'none'
 version: 1.0.0+1
@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   http: ^0.13.3
+  get: ^4.2.4
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +24,5 @@ flutter:
   assets:
     - lib/assets/profile.png
     - lib/assets/codeImage.jpg
+    - lib/assets/github.png
+    - lib/assets/linkedin.png
