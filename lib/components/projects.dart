@@ -28,7 +28,7 @@ class Projects extends StatelessWidget {
               children: List.generate(c.githubProjects.length, (i) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 100,
+                  height: 125,
                   margin: EdgeInsets.symmetric(
                     horizontal: 35,
                     vertical: 10,
