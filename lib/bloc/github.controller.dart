@@ -20,6 +20,8 @@ class GithubController extends GetxController {
         List<GithubProject> projects =
             parsedResponse.map((e) => GithubProject.fromJson(e)).toList();
 
+        projects.removeWhere((p) => p.name == '');
+
         githubProjects.value = projects;
       }
     } catch (e) {
@@ -48,12 +50,23 @@ class GithubProject {
   });
 
   factory GithubProject.fromJson(Map<String, dynamic> json) {
-    return GithubProject(
-      name: json['name'],
-      url: json['html_url'],
-      description: json['description'],
-      language: json['language'] == 'Dart' ? 'Flutter/Dart' : json['language'],
-      license: '${json['license']}',
-    );
+    if (!'${json['name']}'.toLowerCase().contains('github.io')) {
+      return GithubProject(
+        name: '${json['name']}',
+        url: '${json['html_url']}',
+        description: '${json['description']}',
+        language:
+            json['language'] == 'Dart' ? 'Flutter/Dart' : json['language'],
+        license: '${json['license']}',
+      );
+    } else {
+      return GithubProject(
+        name: '',
+        url: '',
+        description: '',
+        language: '',
+        license: '',
+      );
+    }
   }
 }
