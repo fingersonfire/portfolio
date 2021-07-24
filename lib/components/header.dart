@@ -76,8 +76,8 @@ class Info extends StatelessWidget {
       children: [
         Image.asset(
           'lib/assets/profile.png',
-          width: 250,
-          height: 250,
+          width: isMobile(context) ? 200 : 250,
+          height: isMobile(context) ? 200 : 250,
         ),
         Padding(
           padding: const EdgeInsets.all(20.0),
