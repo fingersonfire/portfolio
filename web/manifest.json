@@ -1,11 +1,11 @@
 {
-    "name": "port_project",
-    "short_name": "port_project",
+    "name": "Stone's Portfolio",
+    "short_name": "Stone's Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Stone Pack's portfolio website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
