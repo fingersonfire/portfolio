@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:portfolio/widgets.dart';
+import 'package:portfolio/widgets/index.dart';
+import 'package:portfolio/utilities.dart';
 
 class Header extends StatelessWidget {
   @override
@@ -48,7 +48,7 @@ class Profile extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: height - (height / 3),
+          height: height * .75,
           color: Color.fromARGB(150, 96, 94, 199),
           child: Info(),
         ),
@@ -91,7 +91,7 @@ class Info extends StatelessWidget {
           ),
         ),
         Text(
-          'Cross platform frontend and JavaScript backend developer.',
+          'Cross platform Flutter and backend JavaScript developer.',
           style: TextStyle(
             color: Colors.white,
             fontFamily: 'Red Hat Display',
