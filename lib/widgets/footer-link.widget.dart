@@ -16,14 +16,18 @@ class FooterLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(8),
-      child: GestureDetector(
-        onTapUp: (TapUpDetails details) {
-          c.launchUrl(url);
-        },
-        child: Image.asset(
-          image,
+    return InkWell(
+      onTap: () {},
+      onHover: (value) {},
+      child: Container(
+        margin: EdgeInsets.all(8),
+        child: GestureDetector(
+          onTapUp: (TapUpDetails details) {
+            c.launchUrl(url);
+          },
+          child: Image.asset(
+            image,
+          ),
         ),
       ),
     );
