@@ -1,44 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:portfolio/widgets.dart';
+import 'package:portfolio/widgets/index.dart';
+import 'package:portfolio/utilities.dart';
+import 'package:portfolio/widgets/styled.container.dart';
 
 class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(50),
-      padding: EdgeInsets.all(20),
-      constraints: BoxConstraints(maxWidth: 1000),
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 2,
-          color: Color.fromARGB(150, 96, 94, 199),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(150, 96, 94, 199),
-            blurRadius: 5.0,
-            offset: Offset(5, 5),
-          )
-        ],
-        borderRadius: BorderRadius.all(
-          Radius.circular(15.0),
-        ),
-        color: Colors.white,
-      ),
-      child: ConditionalWidget(
+    return StyledContainer(
+      childWidget: ConditionalWidget(
         condition: isMobile(context),
         trueChild: Column(
           children: [
-            Text(
-              'Skills',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 40,
-              ),
-            ),
+            HeaderText(text: 'Skills'),
             Technologies(),
             Container(
-              child: Divider(),
+              margin: EdgeInsets.symmetric(horizontal: 50),
+              child: Divider(
+                thickness: 1,
+                color: Colors.black,
+              ),
             ),
             SoftSkills(),
           ],
@@ -47,13 +26,7 @@ class Skills extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(bottom: 15),
-              child: Text(
-                'Skills & Technologies',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 40,
-                ),
-              ),
+              child: HeaderText(text: 'Skills & Technologies'),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -65,7 +38,10 @@ class Skills extends StatelessWidget {
                     constraints: BoxConstraints(maxWidth: 300),
                     width: MediaQuery.of(context).size.width / 10,
                     height: 150,
-                    child: VerticalDivider(),
+                    child: VerticalDivider(
+                      thickness: 1,
+                      color: Colors.black,
+                    ),
                   ),
                   SoftSkills(),
                 ],
@@ -83,6 +59,7 @@ class Technologies extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 225,
+      width: isMobile(context) ? MediaQuery.of(context).size.width * .5 : null,
       child: BulletList(
         items: [
           'Dart / Flutter',
@@ -102,6 +79,7 @@ class SoftSkills extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 225,
+      width: isMobile(context) ? MediaQuery.of(context).size.width * .5 : null,
       child: BulletList(
         items: [
           'Team Leadership',
