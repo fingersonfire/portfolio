@@ -48,7 +48,7 @@ class Profile extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: height * .75,
+          height: height * .8,
           color: Color.fromARGB(150, 96, 94, 199),
           child: Info(),
         ),
